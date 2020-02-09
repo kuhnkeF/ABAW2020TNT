@@ -1,7 +1,8 @@
 # TSAV Affect Analysis in the Wild (ABAW2020 submission)
 
 **[Two-Stream Aural-Visual Affect Analysis in the Wild](TBA)**
-*(Submission to the Affective Behavior Analysis in-the-wild (ABAW) 2020 competition)*
+
+*(Submission to the Affective Behavior Analysis in-the-wild ([ABAW](https://ibug.doc.ic.ac.uk/resources/fg-2020-competition-affective-behavior-analysis/)) 2020 competition)*
 
 
 ## Getting Started
