@@ -25,6 +25,8 @@ To reproduce the competition results, download our model and alignment files:
 [Model](https://www.tnt.uni-hannover.de/project/affwild2/aff2model_tnt.zip) and
 [Alignment data](https://www.tnt.uni-hannover.de/project/affwild2/aff2alignmentdata_tnt.zip)
 
+You need the original videos from [ABAW](https://ibug.doc.ic.ac.uk/resources/fg-2020-competition-affective-behavior-analysis/).
+
 Clone the repository and extract the data before running create_database.py. 
 
 create_database.py extracts and aligns the faces and audio files from the Aff-Wild2 videos.

@@ -86,6 +86,7 @@ if __name__ == '__main__':
         #labels[ids, :] = torch.cat([ex_label, va_label, au_label], dim=1)
 
     # store the predictions so we can skip inference later
+    os.makedirs(result_path, exist_ok=True)
     torch.save({'predictions': output}, os.path.join(result_path, 'inference.pkl'))
 
     # load the predictions
