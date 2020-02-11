@@ -1,6 +1,6 @@
 # TSAV Affect Analysis in the Wild (ABAW2020 submission)
 
-**[Two-Stream Aural-Visual Affect Analysis in the Wild](TBA)**
+**[Two-Stream Aural-Visual Affect Analysis in the Wild](https://arxiv.org/pdf/2002.03399.pdf)**
 
 *(Submission to the Affective Behavior Analysis in-the-wild ([ABAW](https://ibug.doc.ic.ac.uk/resources/fg-2020-competition-affective-behavior-analysis/)) 2020 competition)*
 
@@ -44,19 +44,20 @@ Be aware, the whole process takes long time and some disk space.
 
 Please cite our paper in your publications if the paper/our code or our database alignment/mask data helps your research:
 
-*we will update the reference as soon as the paper is published*
+*we will update the reference as soon as the full paper is published*
 
-    @inproceedings {KuhnkeRumberg2020TSAV,
-      author = {Felix Kuhnke and Lars Rumberg and J{\"o}rn Ostermann},
-      title = {Two-Stream Aural-Visual Affect Analysis in the Wild},
-      booktitle = {TBA},
-      year = {2020},
-      month = TBA
+    @misc{kuhnke2020twostream,
+        title={Two-Stream Aural-Visual Affect Analysis in the Wild},
+        author={Felix Kuhnke and Lars Rumberg and J{\"o}rn Ostermann},
+        year={2020},
+        eprint={2002.03399},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV}
     }
 
 Link to the paper:
 
-*we will provide a link to the paper as soon as it is published*
+[TSAV](https://arxiv.org/pdf/2002.03399.pdf)
 
 Model and alignment data is restricted for research purposes only.
 By using the dataset, code or alignments, please acknowledge the effort by citing the corresponding papers.
