@@ -23,10 +23,10 @@ class Aff2CompDataset(Dataset):
         self.video_dir = root_dir
         self.extracted_dir = os.path.join(self.video_dir, 'extracted')
 
-        self.label_frame = 1
         self.clip_len = 8
         self.input_size = (112, 112)
         self.dilation = 6
+        self.label_frame = self.clip_len * self.dilation
 
         # audio params
         self.window_size = 20e-3
@@ -280,10 +280,13 @@ class Aff2CompDataset(Dataset):
         # ...
         # compute pseudo-labels for ex and va using the distribution of ex- and va-labels
         # ...
-        data = {'AU': None,
-                'EX': None,
-                'VA': None,
-                'Index': index}
+        # original code
+        # data = {'AU': None,
+        #         'EX': None,
+        #         'VA': None,
+        #         'Index': index}
+        # why is this not working?
+        data = {'Index': index}
 
         video_id = self.video_id[index]
 
