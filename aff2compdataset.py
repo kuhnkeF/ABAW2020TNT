@@ -57,6 +57,7 @@ class Aff2CompDataset(Dataset):
         self.cached_metadata_path = os.path.join(self.video_dir, 'dataset.pkl')
 
         if not os.path.isfile(self.cached_metadata_path):
+            print('creating cached_metadata... ')
             self.image_path = []  # paths relative to self.extracted_dir
             self.video_id = []
             self.frame_id = []
@@ -70,6 +71,8 @@ class Aff2CompDataset(Dataset):
             self.feature_names = []
             self.time_stamps = []
             self.mask_available = False
+            self.video_db_nr = []
+            video_db_nr = 0
             for video in tqdm(all_videos):
                 meta = Video(video).meta
                 meta['filename'] = get_filename(video)
@@ -109,6 +112,8 @@ class Aff2CompDataset(Dataset):
                     va_split = meta['VA']
                     splits.append(va_split)
 
+                splits = list(set(splits))  # UPDATED 03.06.2020 (was missing)
+
                 for split in splits:
                     self.time_stamps.append(time_stamps)
                     for image_filename in sorted(os.listdir(extracted_dir)):
@@ -117,6 +122,7 @@ class Aff2CompDataset(Dataset):
                         # path relative to self.extracted_dir
                         self.image_path.append(os.path.relpath(os.path.join(extracted_dir, image_filename), self.extracted_dir))
                         self.video_id.append(meta['filename'])
+                        self.video_db_nr.append(video_db_nr)# UPDATED 03.06.2020 (avoids using frames from neighbour videos)
                         frame_id = int(os.path.splitext(image_filename)[0])
                         self.frame_id.append(frame_id)
                         # add your own label loading here if you want to use this for training
@@ -126,6 +132,7 @@ class Aff2CompDataset(Dataset):
                         self.train_ids.append(1 if split == 'train' else 0)
                         self.val_ids.append(1 if split == 'val' else 0)
                         self.test_ids.append(1 if split == 'test' else 0)
+                    video_db_nr += 1
 
 
             self.frame_id = np.stack(self.frame_id)
@@ -148,7 +155,8 @@ class Aff2CompDataset(Dataset):
                              'val_ids': self.val_ids,
                              'test_ids': self.test_ids,
                              'time_stamps': self.time_stamps,
-                             'mask_available': self.mask_available}, f)
+                             'mask_available': self.mask_available,
+                             'video_db_nr': self.video_db_nr}, f)
         else:
             with open(self.cached_metadata_path, 'rb') as f:
                 meta = pickle.load(f)
@@ -163,6 +171,7 @@ class Aff2CompDataset(Dataset):
                 self.time_stamps = meta['time_stamps']
                 self.mask_available = meta['mask_available']
                 self.test_ids = meta['test_ids']
+                self.video_db_nr = meta['video_db_nr']
 
         self.validation_video_ids()
         self.test_video_ids()
@@ -289,7 +298,7 @@ class Aff2CompDataset(Dataset):
         data = {'Index': index}
 
         video_id = self.video_id[index]
-
+        video_db_nr = self.video_db_nr[index]
         if self.use_mask:
             clip = np.zeros((self.clip_len, self.input_size[0], self.input_size[1], 4), dtype=np.uint8)
             # init all frames black
@@ -298,8 +307,9 @@ class Aff2CompDataset(Dataset):
         _range = range(index - self.label_frame + self.dilation,
                        index - self.label_frame + self.dilation * (self.clip_len + 1), self.dilation)
         for clip_i, all_i in enumerate(_range):
-            if all_i < 0 or all_i >= len(self) or self.video_id[all_i] != video_id:
+            if all_i < 0 or all_i >= len(self) or self.video_db_nr[all_i] != video_db_nr:
                 # leave frame black
+                # using video db_nr is a hack to fix a problem with video ids that might be the same for different videos
                 continue
             else:
                 img = Image.open(os.path.join(self.extracted_dir, self.image_path[all_i]))
