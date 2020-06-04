@@ -21,8 +21,11 @@ sox
 
 ## Testing
 
+UPDATE 04.06.2020: Please delete dataset.pkl from your database folder and run the updated code. This will improve performance.
+
 To reproduce the competition results, download our model and alignment files:  
 [Model](https://www.tnt.uni-hannover.de/project/affwild2/aff2model_tnt.zip) and
+{Note: This is submission 1 from the ABAW competition}
 [Alignment data](https://www.tnt.uni-hannover.de/project/affwild2/aff2alignmentdata_tnt.zip)
 
 (Alignmentdata file was reuploaded on 11.05.2020). md5sum aff2alignmentdata_tnt.zip 806aee937c52103ad7f48b1b19608860)
