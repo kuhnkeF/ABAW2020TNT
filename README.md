@@ -25,12 +25,11 @@ UPDATE 04.06.2020: Please delete dataset.pkl from your database folder and run t
 
 To reproduce the competition results, download our model and alignment files:  
 [Model](https://www.tnt.uni-hannover.de/project/affwild2/aff2model_tnt.zip) and
-
 [Alignment data](https://www.tnt.uni-hannover.de/project/affwild2/aff2alignmentdata_tnt.zip)
 
 Note: The model is submission 1 from the ABAW competition
 We also provide the model for submission 4 with higher performance.
-[ModelSub4](https://www.tnt.uni-hannover.de/project/affwild2/aff2model_tntsub4.zip)
+[Submission 4 model](https://www.tnt.uni-hannover.de/project/affwild2/aff2model_tntsub4.zip)
 
 (Alignmentdata file was reuploaded on 11.05.2020). md5sum aff2alignmentdata_tnt.zip 806aee937c52103ad7f48b1b19608860)
 
