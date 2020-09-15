@@ -15,7 +15,7 @@ Please see https://github.com/kuhnkeF/ABAW2020TNT
 # - set paths to the original aff2 batch1 and batch2 folder
 
 # !!! If you do not have access to the competition set (two files batch1 and batch2) but the normal AFF2
-# downloads AUSet, ExpessionSet... follow
+# downloads AUSet, ExpressionSet... check
 # -> sort_non_competition_set.py
 # and change the video paths and set use_comp_folders to False
 
