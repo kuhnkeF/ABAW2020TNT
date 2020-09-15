@@ -14,6 +14,12 @@ Please see https://github.com/kuhnkeF/ABAW2020TNT
 # - set csv_file_path
 # - set paths to the original aff2 batch1 and batch2 folder
 
+# !!! If you do not have access to the competition set (two files batch1 and batch2) but the normal AFF2
+# downloads AUSet, ExpessionSet... follow
+# -> sort_non_competition_set.py
+# and change the video paths and set use_comp_folders to False
+
+
 from utils import *
 import csv
 from tqdm import tqdm
@@ -22,9 +28,16 @@ from sox import Transformer
 from video import Video
 from face_alignment import *
 import pickle
+from sort_non_competition_set import sort_videos
+
 
 # paths to original aff2 videos
-video_paths = ['/data/face/Aff2/tmp/batch1', '/data/face/Aff2/tmp/batch2']
+use_comp_folders = True
+if use_comp_folders:
+    video_paths = ['/data/face/Aff2/tmp/batch1', '/data/face/Aff2/tmp/batch2']
+else:
+    video_paths = ['/data/face/Aff2/tmp/NON_Competition/ALLVIDEOS'] # just all videos in one folder
+
 csv_file_path = 'video_info.txt'
 output_dir = 'aff2_processed/'   # this is where the extracted data will be stored (in /extracted)
 
@@ -34,6 +47,9 @@ def create_database():
     for path in video_paths:
         all_videos += find_all_video_files(path)
     all_videos.sort()
+
+    if use_comp_folders is False:
+        all_videos = sort_videos(all_videos)
 
     vid_labels = []
     with open(csv_file_path) as csv_file:
