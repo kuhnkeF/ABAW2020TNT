@@ -71,8 +71,9 @@ Please cite our paper in your publications if the paper/our code or our database
 
 Link to the paper:
 
-IEEE [TSAV][https://www.computer.org/csdl/proceedings-article/fg/2020/307900a366/1kecIcAu7W8]
-Arxiv [TSAV](https://arxiv.org/pdf/2002.03399.pdf)
+[IEEE TSAV](https://www.computer.org/csdl/proceedings-article/fg/2020/307900a366/1kecIcAu7W8)
+
+[Arxiv TSAV](https://arxiv.org/pdf/2002.03399.pdf)
 
 Model and alignment data is restricted for research purposes only.
 By using the dataset, code or alignments, please acknowledge the effort by citing the corresponding papers.
