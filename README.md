@@ -52,20 +52,27 @@ Be aware, the whole process takes long time and some disk space.
 
 Please cite our paper in your publications if the paper/our code or our database alignment/mask data helps your research:
 
-*we will update the reference as soon as the full paper is published*
-
-    @misc{kuhnke2020twostream,
-        title={Two-Stream Aural-Visual Affect Analysis in the Wild},
-        author={Felix Kuhnke and Lars Rumberg and J{\"o}rn Ostermann},
-        year={2020},
-        eprint={2002.03399},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV}
+    @INPROCEEDINGS {,
+    author = {F. Kuhnke and L. Rumberg and J. Ostermann},
+    booktitle = {2020 15th IEEE International Conference on Automatic Face and Gesture Recognition (FG 2020) (FG)},
+    title = {Two-Stream Aural-Visual Affect Analysis in the Wild},
+    year = {2020},
+    volume = {},
+    issn = {},
+    pages = {366-371},
+    keywords = {expression recognition;action units;affective behavior analysis;human computer interaction;valence arousal;emotion recognition},
+    doi = {10.1109/FG47880.2020.00056},
+    url = {https://doi.ieeecomputersociety.org/10.1109/FG47880.2020.00056},
+    publisher = {IEEE Computer Society},
+    address = {Los Alamitos, CA, USA},
+    month = {may}
     }
+
 
 Link to the paper:
 
-[TSAV](https://arxiv.org/pdf/2002.03399.pdf)
+IEEE [TSAV][https://www.computer.org/csdl/proceedings-article/fg/2020/307900a366/1kecIcAu7W8]
+Arxiv [TSAV](https://arxiv.org/pdf/2002.03399.pdf)
 
 Model and alignment data is restricted for research purposes only.
 By using the dataset, code or alignments, please acknowledge the effort by citing the corresponding papers.
