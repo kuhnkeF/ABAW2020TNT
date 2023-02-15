@@ -52,7 +52,8 @@ Be aware, the whole process takes long time and some disk space.
 
 Please cite our paper in your publications if the paper/our code or our database alignment/mask data helps your research:
 
-    @INPROCEEDINGS {,
+```BibTeX
+    @INPROCEEDINGS{TSAV_ABAW2020,
     author = {F. Kuhnke and L. Rumberg and J. Ostermann},
     booktitle = {2020 15th IEEE International Conference on Automatic Face and Gesture Recognition (FG 2020) (FG)},
     title = {Two-Stream Aural-Visual Affect Analysis in the Wild},
@@ -67,12 +68,11 @@ Please cite our paper in your publications if the paper/our code or our database
     address = {Los Alamitos, CA, USA},
     month = {may}
     }
-
+```
 
 Link to the paper:
 
 [IEEE TSAV](https://www.computer.org/csdl/proceedings-article/fg/2020/307900a366/1kecIcAu7W8)
-
 [Arxiv TSAV](https://arxiv.org/pdf/2002.03399.pdf)
 
 Model and alignment data is restricted for research purposes only.
